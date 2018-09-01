@@ -1,18 +1,23 @@
 <form #frm="ngForm" class="form-inline" (ngSubmit)="addItem(frm)">
   <div class="form-group">
-    <input
-    type="text"
-    class="form-control"
-    name="itemName"
-    ngModel
-    >
+    <input type="text" class="form-control" name="itemName" ngModel >
   </div>
+  <br>
+  <div>
   <button type="submit" name="button" class="btn btn-success">ADD</button>
-</form>
-<hr>
-<div class="row">
-  <div class="">
-
-  </div>
-
 </div>
+  
+  
+
+</form>
+<br>
+<button name="button" class="btn btn-danger" (click)="delete()">DELETE</button>
+
+<hr>
+
+  <ul *ngFor="let item of items"  >
+    <li>
+{{item}}
+</li>
+  </ul>
+
