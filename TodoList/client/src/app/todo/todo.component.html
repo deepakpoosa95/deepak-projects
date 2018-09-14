@@ -14,7 +14,11 @@
 <button name="button" class="btn btn-danger" (click)="delete()">DELETE</button>
 
 <hr>
-
+<select class="form-control">
+  <option>Swiggy</option>//
+  <option>Zomato</option>
+  <option>Food Panda</option>
+</select>
   <ul *ngFor="let item of items"  >
     <li>
 {{item}}

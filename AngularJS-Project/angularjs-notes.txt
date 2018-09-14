@@ -1,0 +1,12 @@
+AngularJS 
+
+Extends HTML with new attributes.
+Single Page Applications (SPAs).
+
+Basics of AngularJS: 
+
+directives, 
+expressions, 
+filters, 
+modules, and 
+controllers.
