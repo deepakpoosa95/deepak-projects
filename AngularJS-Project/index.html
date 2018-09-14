@@ -6,8 +6,15 @@
  <script src="./scripts/angular.js"></script> 
     </head>
     <body ng-app="">
+
+<div>
 Enter Name : <input type="text" ng-model="name">
 {{name}}
+</div>
+
+<div ng-init="firstname='John';lastname='wick'">  <!-- Use quotes to denote strings in ng-init -->
+    {{firstname}} {{lastname}}
+</div>
 
     </body>
 </html> 

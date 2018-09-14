@@ -1,6 +1,7 @@
 AngularJS 
 
-Extends HTML with new attributes.
+JavaScript framework
+Extends HTML attributes with Directives, and binds data to HTML with Expressions.
 Single Page Applications (SPAs).
 
 Basics of AngularJS: 
@@ -10,3 +11,12 @@ expressions,
 filters, 
 modules, and 
 controllers.
+
+Directives
+
+ng-app   - defines an AngularJS application.
+
+ng-model - binds the value of HTML controls (input, select, textarea) to application data.
+ng-bind  - binds application data to the HTML view.
+
+ng-init - initializes AngularJS application variables
