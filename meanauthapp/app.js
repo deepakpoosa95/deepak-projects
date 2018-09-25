@@ -8,12 +8,15 @@ const  MongoClient = require("mongodb").MongoClient;
 const config = require("./config/database")
 
 MongoClient.connect(config.database, { useNewUrlParser: true },(err,db)=>{
-    if(!err){
-        console.log("Database connected at :"+config.database);
-    }
-    else{
-        console.log("Database error :"+err);
-    }
+    if (err) throw err;
+  console.log("Database created at : "+ config.database);
+  db.close();
+    // if(!err){
+    //     console.log("Database connected at :"+config.database);
+    // }
+    // else{
+    //     console.log("Database error :"+err);
+    // }
 
 });
 
