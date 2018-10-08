@@ -4,8 +4,9 @@
     <head>
 <title>ANGULAR JS</title>
  <script src="./scripts/angular.js"></script> 
+ <script src="./scripts/script1.js"></script>
     </head>
-    <body ng-app="">
+    <body ng-app="myApp" ng-controller="myController">
 
 <div>
 Enter Name : <input type="text" ng-model="name">
@@ -14,7 +15,39 @@ Enter Name : <input type="text" ng-model="name">
 
 <div ng-init="firstname='John';lastname='wick'">  <!-- Use quotes to denote strings in ng-init -->
     {{firstname}} {{lastname}}
+    <p ng-bind="firstname"></p>
 </div>
+
+<div >
+<p>{{moviename}}</p>
+<p>{{directorname}}</p>
+{{person.firstname}}<br>
+{{person.lastname}}<br>
+{{points[2] - 1}}
+</div>
+
+<div style="background-color:{{mycolor}}">
+<input type="text" ng-model="mycolor" style="background-color:{{mycolor}}">
+</div>
+
+<my-own-directive></my-own-directive>
+
+<br>
+
+Quantity :<input type="number" ng-model="quantity"><br>
+Price    :<input type="number" ng-model="price"><br>
+Total    :{{quantity * price | currency}}<br>
+
+<ol>
+    <li ng-repeat="x in movies | orderBy:'director'">{{x.name +"-"+ x.director | uppercase }}</li>
+</ol>
+
+<form name="myForm">
+Enter Email:<input type="email" name="myEmail" ng-model="email"><br>
+<span ng-show="myForm.myEmail.$error.email">Invalid Email</span>
+</form>
+
+
 
     </body>
 </html> 

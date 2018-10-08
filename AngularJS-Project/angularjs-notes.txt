@@ -20,3 +20,125 @@ ng-model - binds the value of HTML controls (input, select, textarea) to applica
 ng-bind  - binds application data to the HTML view.
 
 ng-init - initializes AngularJS application variables
+
+Expressions - inside double braces: {{ expression }}
+Outputs the data
+Binds application data to HTML ~ ng-bind
+
+Modules - Define AngularJS application - ng-app
+controllers - Control AngularJS application - ng-controller
+
+
+var app = angular.module("myApp",[]);
+app.controller("myController",($scope)=>{
+$scope.moviename = "Batman Begins";
+$scope.directorname = "Christopher Nolan";
+});
+
+<div ng-app="myApp">
+<div ng-controller="myController">
+<p>{{moviename}}</p>
+<p>{{directorname}}</p>
+</div>
+</div>
+
+Module defines an application
+Container for application controllers which belong to module
+
+Module created using angular.module()
+
+<div ng-app="myApp">...</div>
+var app = angular.module("myApp", []); 
+
+[] - can be used to define dependent modules
+
+Recommended - load anuglarjs lib - <head> or start of <body>
+
+Directives - Extends HTML with new attributes
+Prefix - ng-
+
+AngularJS has set of built in directives
+Can use module to add own directives
+
+
+app.directive("myOwnDirective",()=>{
+    return {
+            template : "This is text from custom directive"
+    };
+});
+
+<my-own-directive></my-own-directive>
+
+
+ng-repeat - Can be used to repeat HTML elements
+
+Example:
+$scope.movies = ["Batman Begins","Dark Knight","Dark Knight Rises"];
+
+<ol>
+    <li ng-repeat="x in movies">{{x}}</li>
+</ol>
+
+ng-model - can be used for validation of application data
+Eg: email
+
+<form name="myForm">
+Enter Email:<input type="email" name="myEmail" ng-model="email"><br>
+<span ng-show="myForm.myEmail.$error.email">Invalid Email</span>
+</form>
+
+ng-show - shows html only when true
+ng-click - Does when clicked
+<h1 ng-click="changeName()">{{firstname}}</h1>
+
+Rootscope is for Entire Module
+
+app.run(function($rootScope) {
+    $rootScope.color = 'blue';
+});
+
+Adding filters to directives
+USe orderby - inside ng-repeat not inside expression like uppercase
+
+<ol>
+    <li ng-repeat="x in movies | orderBy:'director'">{{x.name +"-"+ x.director | uppercase }}</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
