@@ -21,7 +21,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     this.contactService.getContacts()
     .subscribe(data=>{
-      this.contacts = data;
+      this.contacts = data as any;
     });
   }
 
@@ -37,7 +37,7 @@ export class ContactsComponent implements OnInit {
       console.log(contact)
       this.contactService.getContacts()
     .subscribe(data=>{
-      this.contacts = data;
+      this.contacts = data as any;
     })
     });
   }
@@ -59,7 +59,7 @@ export class ContactsComponent implements OnInit {
       // }
       this.contactService.getContacts()
     .subscribe(data=>{
-      this.contacts = data;
+      this.contacts = data as any;
     });
     })
   }
